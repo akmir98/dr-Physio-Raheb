@@ -1105,9 +1105,8 @@ transition: ease .3s;
     background: var(--main);
     border-radius: 3px;
     border: none;
-    margin-top: 10px;
-    margin-left: 1rem;
-    transform: translateX(100%);
+    margin: 15px auto;
+    display: block;
 }
 .contect .request-contect .request-conten button:hover{
     
@@ -3610,7 +3609,7 @@ reponsive
 
   .contect .request-contect .request-conten {
     width: 80%;
-    height: 550px;
+    height: auto;
     margin-left:4rem;
   }
 
@@ -5188,8 +5187,9 @@ about page */
 
 .service-contenner-section .contenner-section img{
 
-    height:250px;
+    height:300px;
     width: 100%;
+    
 
 }
 
@@ -5963,4 +5963,570 @@ form .bttn{
     background:#f8d7da;
     color:#721c24;
     border:1px solid #f5c6cb;
+}
+/* ===========================
+   EXTRA SMALL PHONES
+   370px and below
+=========================== */
+
+@media (max-width: 370px){
+
+    html{
+        font-size:14px;
+    }
+
+    h1{
+        font-size:1.7rem;
+        line-height:1.3;
+    }
+
+    h2{
+        font-size:1.4rem;
+        line-height:1.3;
+    }
+
+    h3{
+        font-size:1.1rem;
+    }
+
+    p{
+        font-size:13px;
+        line-height:22px;
+    }
+
+    section{
+        padding:2rem 12px;
+    }
+
+    .title{
+        font-size:2rem;
+    }
+
+    .Home .list .item .content-home{
+        padding:1rem;
+        width:100%;
+    }
+
+    .btn,
+    button,
+    .submit{
+        width:100%;
+        font-size:14px;
+        padding:12px;
+    }
+
+    input,
+    textarea{
+        font-size:14px;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
+
+    iframe{
+        height:220px;
+    }
+}
+
+
+/* ===========================
+   VERY SMALL PHONES
+   320px and below
+=========================== */
+
+@media (max-width:320px){
+
+    html{
+        font-size:13px;
+    }
+
+    h1{
+        font-size:1.5rem;
+    }
+
+    h2{
+        font-size:1.25rem;
+    }
+
+    h3{
+        font-size:1rem;
+    }
+
+    p{
+        font-size:12px;
+    }
+
+    .title{
+        font-size:1.7rem;
+    }
+
+    section{
+        padding:1.5rem 10px;
+    }
+
+    button,
+    .submit{
+        font-size:13px;
+    }
+}
+@media (max-width: 370px){
+
+    .about{
+        padding: 2rem 1rem;
+    }
+
+    .about .about-content{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about .about-content .clanic-video{
+        width: 100%;
+    }
+
+    .about .about-content .clanic-video img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        padding-left: 0;
+        margin-right: 0;
+        box-shadow: none;
+    }
+
+    .about .about-content .clanic-video .home-play-btn,
+    .about .about-content .clanic-video .about-play-btn{
+        width: 55px;
+        height: 55px;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    .about .about-content .clanic-video .home-play-btn i,
+    .about .about-content .clanic-video .about-play-btn i{
+        font-size: 22px;
+    }
+
+    .about .about-content .content{
+        width: 100%;
+    }
+
+    .about .about-content .content .check-point{
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+    }
+
+    .about .about-content .content .check-point li{
+        font-size: 14px;
+    }
+
+}
+/* ===========================
+   SERVICE SECTION - SMALL PHONES
+=========================== */
+@media (max-width:370px){
+    .option .point li::before{
+        width: 100px;
+        font-size: 10px;
+        height: auto;
+    }
+}
+@media (max-width:480px){
+    .option .point li::before{
+        width: 100px;
+        font-size: 10px;
+        height: auto;
+    }
+}
+@media (max-width:370px){
+   .service2{
+    padding: 0;
+   }
+    .service-card{
+        padding:0px;
+        gap: 20px;
+        width: 100%;
+        
+    }
+
+    .service-card img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+    }
+
+    .service-card h3{
+        font-size:1.1rem;
+    }
+
+    .service-card p{
+        font-size:13px;
+        line-height:22px;
+    }
+
+    .service-card a{
+        font-size:14px;
+        padding:10px 18px;
+    }
+
+}
+@media (max-width: 370px){
+
+    .service-controls{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .service-arrow{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .arrow-btn{
+        width: 42px;
+        height: 42px;
+        
+    }
+
+}
+/* ===========================
+   VIDEO REVIEWS - SMALL PHONES
+=========================== */
+
+@media (max-width: 370px){
+
+    .video-reviews{
+        padding: 2rem 1rem;
+    }
+
+    .parent-video{
+        width: 100%;
+    }
+
+    .parent-video img{
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .video-grid{
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .video-card img{
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+}
+/* Address items */
+.address{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.address i{
+    color: var(--main);
+    font-size: 18px;
+    min-width: 20px;
+}
+
+/* Each icon + text on one row */
+.address .address-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.address .address-item span{
+    line-height: 1.6;
+    color:white;
+}
+@media (max-width:370px){
+
+    .address-item{
+        gap:10px;
+    }
+
+    .address-item span{
+        font-size:13px;
+        word-break: break-word;
+    }
+
+    .address-item i{
+        font-size:16px;
+        margin-top:3px;
+    }
+
+}
+@media(max-width:370px){
+
+
+
+    .image2{
+
+        margin-top:10rem;
+    }
+
+
+    .image2 img{
+
+        height:400px;
+        
+        object-fit:cover;
+
+    }
+
+
+
+    .image2 svg{
+
+        display:none;
+
+    }
+
+
+
+    .image2 .img-content2{
+
+        left:5%;
+
+        right:5%;
+
+        top:40%;
+
+        display:block;
+
+        font-size:1.2rem;
+
+        text-align:center;
+
+    }
+
+
+
+    .image2 .img-content2 .a-tag{
+
+        position:relative;
+
+        top:20px;
+
+        width:100%;
+
+        font-size:.95rem;
+
+    }
+
+}
+@media (max-width: 370px){
+
+    .mission{
+        padding: 2rem 1rem;
+    }
+
+    .mission-text{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mission-text img{
+        width: 100%;
+        max-width: 100%;
+        height: 206px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+}
+@media (max-width: 370px) {
+    .recen-post-div, .category {
+        width: 90%;
+        height: auto;
+    }
+}
+/* =========================
+   480px Responsive
+========================= */
+@media (max-width: 480px){
+
+    .mission{
+        padding: 2rem 1rem;
+    }
+
+    .mission-text{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mission-text img{
+        width: 100%;
+        max-width: 100%;
+        height: 206px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+}
+@media (max-width:480px){
+
+/* ===== ABOUT ===== */
+
+.about{
+    padding:1.5rem;
+}
+
+.about .about-content{
+    flex-direction:column;
+    gap:2rem;
+}
+
+.about .about-content .clanic-video{
+    width:100%;
+}
+
+.about .about-content .clanic-video img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+    padding:0;
+    margin:0;
+    box-shadow:none;
+    border-radius:12px;
+}
+
+.about .about-content .content{
+    width:100%;
+    text-align:center;
+}
+
+.about .about-content .content h2{
+    font-size:1.5rem;
+}
+
+.about .about-content .content p{
+    font-size:15px;
+    line-height:1.8;
+}
+
+.about .about-content .content .check-point{
+    grid-template-columns:1fr;
+    grid-auto-flow:row;
+}
+
+.about .about-content .content .check-point li{
+    font-size:15px;
+    text-align:left;
+}
+
+/* Play Button */
+
+.home-play-btn,
+.about-play-btn{
+    width:60px !important;
+    height:60px !important;
+    left:50%;
+    top:50%;
+    bottom:auto;
+    transform:translate(-50%,-50%);
+}
+
+.home-play-btn i,
+.about-play-btn i{
+    font-size:1.8rem !important;
+}
+
+.home-play-btn::before,
+.about-play-btn::before{
+    width:80px !important;
+    height:80px !important;
+}
+
+/* ===== SERVICES ===== */
+
+.service-slider{
+    padding:0;
+}
+
+.service-card{
+    width:100%;
+    min-width:100%;
+    margin:0 auto;
+}
+
+.service-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.service-card h3{
+    font-size:1.3rem;
+}
+
+.service-card p{
+    font-size:15px;
+}
+
+/* ===== VIDEO ===== */
+
+.video-reviews{
+    padding:1.5rem;
+}
+
+.parent-video{
+    width:100%;
+}
+
+.parent-video img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.parent-video .play-btn{
+    width:65px;
+    height:65px;
+}
+
+.parent-video .play-btn span{
+    font-size:2rem;
+}
+
+/* Video Grid */
+
+.video-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.video-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.video-card h4{
+    font-size:1rem;
+}
+
+/* Popup */
+
+.video-popup iframe{
+    width:95vw;
+    height:260px;
+}
+
 }
