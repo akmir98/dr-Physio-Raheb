@@ -121,6 +121,11 @@ console.log("Doctor:", doctorInfo.response);
 
 const patientInfo = await transporter.sendMail(patientMail);
 console.log("Patient:", patientInfo.response);
+await Promise.all([
+    transporter.sendMail(mailOptions),
+    transporter.sendMail(patientMail)
+]);
+
 
 
         res.json({
