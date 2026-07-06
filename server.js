@@ -1,3 +1,5 @@
+
+const dns = require("dns");
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -9,23 +11,22 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Improved transporter with timeout and debug
+
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
-
-    pool: true,
-    maxConnections: 5,
-    maxMessages: 100,
-
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     },
-
-    logger: true,
-    debug: true
+    getSocket: (options, callback) => {
+        dns.lookup(options.host, { family: 4 }, (err, address) => {
+            if (err) return callback(err);
+            options.host = address;
+            callback(null, false);
+        });
+    }
 });
 app.use(express.static(__dirname));
 
@@ -74,22 +75,29 @@ Message: ${message}
             <p>Islamabad, Pakistan</p>
         `
     };
-try {
-    console.time("Email Sending");
+console.time("Email Sending");
 
+console.time("Email Sending");
+
+try {
     await Promise.all([
         transporter.sendMail(mailOptions),
         transporter.sendMail(patientMail)
     ]);
-
-    console.timeEnd("Email Sending");
 
     res.json({
         message: "Contact message sent successfully"
     });
 
 } catch (error) {
-    console.error(error);
+    console.error("Email error:", error);
+
+    res.status(500).json({
+        message: "Email failed: " + error.message
+    });
+
+} finally {
+    console.timeEnd("Email Sending");
 }
 });
 transporter.verify((err, success) => {
