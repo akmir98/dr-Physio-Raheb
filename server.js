@@ -22,7 +22,10 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    }
+    },
+
+    logger: true,
+    debug: true
 });
 app.use(express.static(__dirname));
 
@@ -71,25 +74,23 @@ Message: ${message}
             <p>Islamabad, Pakistan</p>
         `
     };
+try {
+    console.time("Email Sending");
 
-    try {
-        console.log("Sending emails...");
-        
-        // Send emails sequentially for better control
-      await Promise.all([
-    transporter.sendMail(mailOptions),
-    transporter.sendMail(patientMail)
-]);
-        
-        res.json({
-            message: "Contact message sent successfully"
-        });
-    } catch (error) {
-        console.error("Email error:", error);
-        res.status(500).json({
-            message: "Email failed: " + error.message
-        });
-    }
+    await Promise.all([
+        transporter.sendMail(mailOptions),
+        transporter.sendMail(patientMail)
+    ]);
+
+    console.timeEnd("Email Sending");
+
+    res.json({
+        message: "Contact message sent successfully"
+    });
+
+} catch (error) {
+    console.error(error);
+}
 });
 transporter.verify((err, success) => {
     if (err) {
