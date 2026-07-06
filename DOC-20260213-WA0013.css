@@ -6530,3 +6530,890 @@ form .bttn{
 }
 
 }
+/*==========================
+ HOME HEALTH SERVICE
+===========================*/
+
+.home-health{
+    padding:6rem 8%;
+    background:#f8fbff;
+}
+
+.home-health-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.home-health-image{
+    flex:1;
+}
+
+.home-health-image img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    object-fit:cover;
+}
+
+.home-health-text{
+    flex:1;
+}
+
+.home-health-text h3{
+    color:var(--main);
+    font-size:1.3rem;
+    margin-bottom:10px;
+}
+
+.home-health-text h2{
+    font-size:2.4rem;
+    margin-bottom:20px;
+    line-height:1.3;
+}
+
+.home-health-text p{
+    color:var(--text);
+    line-height:32px;
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+.home-benefits{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.benefit{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:16px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.benefit:hover{
+    transform:translateY(-5px);
+}
+
+.benefit i{
+    width:50px;
+    height:50px;
+    background:var(--main);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.benefit span{
+    font-weight:600;
+    color:#222;
+}
+
+.home-health-btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:var(--main);
+    color:#fff;
+    border-radius:6px;
+    font-size:1.1rem;
+    transition:.3s;
+}
+
+.home-health-btn:hover{
+    background:#fff;
+    color:var(--main);
+    border:1px solid var(--main);
+}
+
+
+
+
+
+
+
+/* ==========================
+HOME HEALTH PAGE
+========================== */
+
+/* .home-health-hero{
+    height:70vh;
+    position:relative;
+    overflow:hidden;
+    margin-top: 9rem;
+}
+
+.home-health-hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.hero-overlay h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero-overlay p{
+    width:700px;
+    max-width:90%;
+    line-height:32px;
+    margin-bottom:35px;
+}
+
+.hero-overlay a{
+    padding:15px 40px;
+    background:var(--main);
+    color:#fff;
+    border-radius:6px;
+    transition:.3s;
+}
+
+.hero-overlay a:hover{
+    background:#fff;
+    color:var(--main);
+} */
+
+.home-about{
+    display:flex;
+    gap:60px;
+    align-items:center;
+    padding:80px 8%;
+}
+
+.home-about-image{
+    flex:1;
+}
+
+.home-about-image img{
+    width:100%;
+    border-radius:12px;
+}
+
+.home-about-content{
+    flex:1;
+}
+
+.home-about-content h3{
+    color:var(--main);
+}
+
+.home-about-content h2{
+    font-size:2.5rem;
+    margin:15px 0;
+}
+
+.home-about-content p{
+    line-height:30px;
+    margin-bottom:20px;
+    color:var(--text);
+}
+
+.about-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.about-list div{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+}
+
+.about-list i{
+    color:var(--main);
+}
+
+.need-home-service{
+    padding:80px 8%;
+    text-align:center;
+    background:#f8fbff;
+}
+
+.need-home-service h3{
+    color:var(--main);
+}
+
+.need-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:50px;
+}
+
+.need-card{
+    background:#fff;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.08);
+}
+
+.need-card i{
+    font-size:40px;
+    color:var(--main);
+    margin-bottom:20px;
+}
+
+.need-card p{
+    line-height:28px;
+    color:var(--text);
+}
+
+.conditions{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.condition-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:45px;
+}
+
+.condition{
+    background:#fff;
+    padding:20px;
+    box-shadow:0 0 12px rgba(0,0,0,.08);
+    border-radius:8px;
+    font-weight:600;
+}
+
+.condition i{
+    color:var(--main);
+    margin-right:8px;
+}
+/* WHY CHOOSE */
+
+.why-home{
+    padding:80px 8%;
+    background:#f8fbff;
+    text-align:center;
+}
+
+.why-home h3{
+    color:var(--main);
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-top:45px;
+}
+
+.why-card{
+    padding:35px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 0 12px rgba(0,0,0,.08);
+}
+
+.why-card i{
+    font-size:45px;
+    color:var(--main);
+    margin-bottom:20px;
+}
+
+.why-card p{
+    margin-top:15px;
+    color:var(--text);
+    line-height:28px;
+}
+
+
+/* PROCESS */
+
+.work-process{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    margin-top:50px;
+}
+
+.step{
+    position:relative;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 0 12px rgba(0,0,0,.08);
+}
+
+.step span{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    border-radius:50%;
+    background:var(--main);
+    color:#fff;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+
+/* COVERAGE */
+
+.coverage{
+    padding:80px 8%;
+    background:#f8fbff;
+    text-align:center;
+}
+
+.coverage-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:40px;
+}
+
+.coverage-grid div{
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,.08);
+    font-weight:600;
+}
+
+
+/* FAQ */
+
+.faq{
+    padding:80px 8%;
+}
+
+.faq h3{
+    text-align:center;
+    color:var(--main);
+    margin-bottom:40px;
+}
+
+.faq-item{
+    background:#fff;
+    box-shadow:0 0 10px rgba(0,0,0,.08);
+    padding:25px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.faq-item h4{
+    color:var(--main);
+    margin-bottom:10px;
+}
+
+.faq-item p{
+    color:var(--text);
+    line-height:28px;
+}
+
+
+/* CTA */
+
+.home-cta{
+    padding:80px 8%;
+    text-align:center;
+    background:var(--main);
+    color:#fff;
+}
+
+.home-cta p{
+    width:650px;
+    max-width:95%;
+    margin:20px auto 40px;
+    line-height:30px;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.cta-buttons a{
+    padding:15px 35px;
+    background:#fff;
+    color:var(--main);
+    border-radius:6px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.cta-buttons a:hover{
+    transform:translateY(-4px);
+}
+.need-card,
+.why-card,
+.condition,
+.step,
+.coverage-grid div,
+.faq-item{
+    transition:all .3s ease;
+}
+
+.need-card:hover,
+.why-card:hover,
+.condition:hover,
+.step:hover,
+.coverage-grid div:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 22px rgba(0,0,0,.12);
+}
+.home-about-image{
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.home-about-image img{
+    transition:.5s;
+}
+
+.home-about-image:hover img{
+    transform:scale(1.05);
+}
+.home-about h2,
+.need-home-service h2,
+.conditions h2,
+.why-home h2,
+.work-process h2,
+.coverage h2,
+.home-cta h2{
+    margin:12px 0 18px;
+    font-size:2.3rem;
+}
+
+.home-about h3,
+.need-home-service h3,
+.conditions h3,
+.why-home h3,
+.work-process h3,
+.coverage h3{
+    color:var(--main);
+    margin-bottom:10px;
+}
+.need-card h4,
+.why-card h4,
+.step h4{
+    margin:15px 0;
+}
+
+.condition{
+    line-height:28px;
+}
+
+.hero-overlay a,
+.cta-buttons a{
+    transition:.3s ease;
+}
+
+.hero-overlay a:hover,
+.cta-buttons a:hover{
+    transform:translateY(-3px);
+}
+.home-health-hero img{
+    transition:8s ease;
+}
+
+.home-health-hero:hover img{
+    transform:scale(1.08);
+}
+.home-about,
+.need-home-service,
+.conditions,
+.why-home,
+.work-process,
+.coverage,
+.faq,
+.home-cta{
+    overflow:hidden;
+}
+/* ===========================
+   TABLET (765px)
+===========================*/
+
+@media (max-width:765px){
+
+.home-about{
+    flex-direction:column;
+    padding:60px 5%;
+    gap:40px;
+}
+
+.home-about-image,
+.home-about-content{
+    width:100%;
+}
+
+.home-about-content h2{
+    font-size:2rem;
+}
+
+.need-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.condition-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.why-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.process{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.coverage-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.hero-overlay h1{
+    font-size:2.4rem;
+}
+
+.hero-overlay p{
+    width:100%;
+}
+
+.home-cta h2{
+    font-size:2rem;
+}
+
+.cta-buttons{
+    flex-wrap:wrap;
+}
+
+}
+
+
+/* ===========================
+   MOBILE (480px)
+===========================*/
+
+@media (max-width:480px){
+
+
+.home-about{
+    flex-direction:column;
+    padding:50px 20px;
+    gap:30px;
+}
+
+.home-about-content h2{
+    font-size:1.7rem;
+}
+
+.home-about-content p{
+    line-height:28px;
+}
+
+.about-list{
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.need-home-service,
+.conditions,
+.why-home,
+.work-process,
+.coverage,
+.faq,
+.home-cta{
+    padding:50px 20px;
+}
+
+.need-grid,
+.condition-grid,
+.why-grid,
+.process,
+.coverage-grid{
+    grid-template-columns:1fr;
+}
+
+.need-card,
+.why-card,
+.step,
+.condition{
+    padding:25px;
+}
+
+.need-card i,
+.why-card i{
+    font-size:35px;
+}
+
+.home-cta h2{
+    font-size:1.6rem;
+}
+
+.home-cta p{
+    width:100%;
+    line-height:28px;
+}
+
+.cta-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.cta-buttons a{
+    width:100%;
+    max-width:280px;
+    text-align:center;
+}
+
+.faq-item{
+    padding:20px;
+}
+
+.faq-item h4{
+    font-size:1.1rem;
+}
+
+}
+
+
+/* ===========================
+   SMALL MOBILE (370px)
+===========================*/
+
+@media (max-width:370px){
+
+
+.home-about{
+    padding:40px 15px;
+}
+
+.home-about-content h2{
+    font-size:1.45rem;
+}
+
+.home-about-content p{
+    font-size:.95rem;
+    line-height:26px;
+}
+
+.about-list{
+    gap:12px;
+    font-size:.95rem;
+}
+
+.need-home-service,
+.conditions,
+.why-home,
+.work-process,
+.coverage,
+.faq,
+.home-cta{
+    padding:40px 15px;
+}
+
+.need-card,
+.why-card,
+.step,
+.condition,
+.coverage-grid div,
+.faq-item{
+    padding:18px;
+}
+
+.need-card h4,
+.why-card h4,
+.step h4{
+    font-size:1rem;
+}
+
+.need-card p,
+.why-card p,
+.step p,
+.faq-item p{
+    font-size:.9rem;
+    line-height:24px;
+}
+
+.home-cta h2{
+    font-size:1.3rem;
+}
+
+.home-cta p{
+    font-size:.9rem;
+}
+
+.cta-buttons a{
+    padding:13px;
+    font-size:.95rem;
+}
+
+}
+/* ===========================
+   HOME HEALTH RESPONSIVE
+===========================*/
+
+/* Tablet */
+@media (max-width:765px){
+
+.home-health{
+    margin-top: 4rem;
+    padding:60px 5%;
+}
+
+.home-health-content{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.home-health-image,
+.home-health-text{
+    width:100%;
+}
+
+.home-health-image img{
+    width:100%;
+    height:auto;
+}
+
+.home-health-text{
+    text-align:center;
+}
+
+.home-health-text h2{
+    font-size:2rem;
+}
+
+.home-benefits{
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.home-health-btn{
+    display:inline-block;
+    margin-top:25px;
+}
+
+}
+
+
+/* Mobile */
+@media (max-width:480px){
+
+.home-health{
+    padding:50px 20px;
+    margin-top: 4rem;
+}
+
+.home-health-content{
+    flex-direction:column;
+    gap:30px;
+}
+
+.home-health-image img{
+    width:100%;
+    border-radius:10px;
+}
+
+.home-health-text h3{
+    font-size:1.2rem;
+}
+
+.home-health-text h2{
+    font-size:1.6rem;
+    line-height:1.4;
+}
+
+.home-health-text p{
+    font-size:1rem;
+    line-height:28px;
+}
+
+.home-benefits{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.benefit{
+    justify-content:flex-start;
+}
+
+.home-health-btn{
+    width:100%;
+    display:block;
+    text-align:center;
+    padding:15px;
+}
+
+}
+
+
+/* Small Mobile */
+@media (max-width:370px){
+
+.home-health{
+    padding:40px 15px;
+    margin-top: 4rem;
+}
+
+.home-health-text h3{
+    font-size:1rem;
+}
+
+.home-health-text h2{
+    font-size:1.35rem;
+}
+
+.home-health-text p{
+    font-size:.92rem;
+    line-height:25px;
+}
+
+.home-benefits{
+    gap:12px;
+}
+
+.benefit{
+    font-size:.9rem;
+}
+
+.benefit i{
+    font-size:1rem;
+}
+
+.home-health-btn{
+    width:100%;
+    padding:13px;
+    font-size:.95rem;
+}
+
+}
