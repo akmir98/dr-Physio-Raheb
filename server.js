@@ -114,40 +114,31 @@ const patientMail = {
 };
 
 
-    try{
-console.log("Customer email:", email);
-const doctorInfo = await transporter.sendMail(mailOptions);
-console.log("Doctor:", doctorInfo.response);
+try {
 
-const patientInfo = await transporter.sendMail(patientMail);
-console.log("Patient:", patientInfo.response);
-await Promise.all([
-    transporter.sendMail(mailOptions),
-    transporter.sendMail(patientMail)
-]);
+    console.log("Customer email:", email);
 
+    await Promise.all([
+        transporter.sendMail(mailOptions),
+        transporter.sendMail(patientMail)
+    ]);
 
+    console.log("Emails sent successfully");
 
-        res.json({
+    res.json({
+        message: "Contact message sent successfully"
+    });
 
-            message:"Contact message sent successfully"
+}
+catch (error) {
 
-        });
+    console.log(error);
 
+    res.status(500).json({
+        message: "Email failed"
+    });
 
-    }
-    catch(error){
-
-        console.log(error);
-
-
-        res.status(500).json({
-
-            message:"Email failed"
-
-        });
-
-    }
+}
 
 
 });
