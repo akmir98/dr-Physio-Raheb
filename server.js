@@ -14,16 +14,16 @@ const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
+
+    pool: true,
+    maxConnections: 5,
+    maxMessages: 100,
+
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    },
-    connectionTimeout: 5000,
-    greetingTimeout: 5000,
-    socketTimeout: 5000,
-    debug: false // Set to true for debugging
+    }
 });
-
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
@@ -76,11 +76,10 @@ Message: ${message}
         console.log("Sending emails...");
         
         // Send emails sequentially for better control
-        await transporter.sendMail(mailOptions);
-        console.log("Clinic email sent");
-        
-        await transporter.sendMail(patientMail);
-        console.log("Patient email sent");
+      await Promise.all([
+    transporter.sendMail(mailOptions),
+    transporter.sendMail(patientMail)
+]);
         
         res.json({
             message: "Contact message sent successfully"
@@ -92,7 +91,13 @@ Message: ${message}
         });
     }
 });
-
+transporter.verify((err, success) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("SMTP Ready");
+    }
+});
 // Service endpoint (improved)
 app.post("/service-request", async (req, res) => {
     const { name, email, phone, issues } = req.body;
