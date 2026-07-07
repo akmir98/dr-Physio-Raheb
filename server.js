@@ -1,5 +1,4 @@
 
-const dns = require("dns");
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -13,19 +12,10 @@ app.use(express.json());
 
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    service: "gmail",
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    },
-    getSocket: (options, callback) => {
-        dns.lookup(options.host, { family: 4 }, (err, address) => {
-            if (err) return callback(err);
-            options.host = address;
-            callback(null, false);
-        });
     }
 });
 app.use(express.static(__dirname));
@@ -77,7 +67,6 @@ Message: ${message}
     };
 console.time("Email Sending");
 
-console.time("Email Sending");
 
 try {
     await Promise.all([
