@@ -32,7 +32,7 @@ if (!name || !email || !message) {
     try {
 
         // Email to clinic
-        await resend.emails.send({
+        const clinic=await resend.emails.send({
 
             from: "onboarding@resend.dev",
 
@@ -56,9 +56,9 @@ Message:
 ${message}
 `
         });
-
+console.log("clinic",clinic)
         // Auto reply
-        await resend.emails.send({
+const  patientresult=await resend.emails.send({
 
             from: "onboarding@resend.dev",
 
@@ -78,7 +78,7 @@ ${message}
 <h3>Dr Physio Rehab</h3>
 `
         });
-
+console.log("petientemail",patientresult)
         res.json({
 
             message: "Message sent successfully"
