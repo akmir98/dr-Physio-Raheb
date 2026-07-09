@@ -44,9 +44,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+function updateScroll() {
 
+    if (comments.length > 5) {
+        commentContainer.style.maxHeight = "500px";
+        commentContainer.style.overflowY = "auto";
+    } else {
+        commentContainer.style.maxHeight = "none";
+        commentContainer.style.overflowY = "visible";
+    }
+
+}
     // Show saved comments on page load
     displayComments();
+    updateScroll()
 
     form.addEventListener("submit", function (e) {
 
