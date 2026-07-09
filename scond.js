@@ -6,93 +6,96 @@ document.addEventListener("DOMContentLoaded", function () {
     const nameInput = document.getElementById("name");
     const messageInput = document.getElementById("Message2");
 
-
     if (!form || !commentContainer) {
         console.log("Form or container not found");
         return;
     }
 
+    // Load saved comments
+    let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+    // Display comments
+    function displayComments() {
+
+        commentContainer.innerHTML = "";
+
+        comments.forEach(comment => {
+
+            const newComment = document.createElement("div");
+
+            newComment.className = "comments-user";
+
+            newComment.innerHTML = `
+                <i class="fa-solid fa-user"></i>
+
+                <div class="comment-to-user">
+                    <h4 class="name-of-user">${comment.name}</h4>
+                    <p>${comment.message}</p>
+
+                    <h5>
+                        ${comment.date}
+                        <span>- ${comment.time}</span>
+                    </h5>
+                </div>
+            `;
+
+            commentContainer.appendChild(newComment);
+
+        });
+
+    }
+
+    // Show saved comments on page load
+    displayComments();
 
     form.addEventListener("submit", function (e) {
 
         e.preventDefault();
 
-
         const name = nameInput.value.trim();
         const message = messageInput.value.trim();
 
-
-        if(name === "" || message === ""){
+        if (name === "" || message === "") {
             alert("Please fill all required fields!");
             return;
         }
 
-
         const now = new Date();
 
         const date = now.toLocaleDateString("en-US", {
-            day:"2-digit",
-            month:"long",
-            year:"numeric"
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
         });
 
-
-        const time = now.toLocaleTimeString([],{
-            hour:"2-digit",
-            minute:"2-digit"
+        const time = now.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
         });
 
+        const comment = {
+            name,
+            message,
+            date,
+            time
+        };
 
+        // Add newest comment first
+        comments.unshift(comment);
 
-        const newComment = document.createElement("div");
-
-        newComment.className = "comments-user";
-
-
-        newComment.innerHTML = `
-
-            <i class="fa-solid fa-user"></i>
-
-            <div class="comment-to-user">
-
-                <h4 class="name-of-user">${name}</h4>
-
-                <p>${message}</p>
-
-                <h5>
-                    ${date}
-                    <span>- ${time}</span>
-                </h5>
-
-            </div>
-
-        `;
-
-
-        // Add new comment at top
-        commentContainer.insertBefore(
-            newComment,
-            commentContainer.children[1]
-        );
-
-
-        // Keep only 10 comments
-        const allComments = commentContainer.querySelectorAll(".comments-user");
-
-
-        if(allComments.length > 4){
-
-            allComments[allComments.length - 1].remove();
-
+        // Keep only latest 10 comments
+        if (comments.length > 10) {
+            comments.pop();
         }
 
+        // Save to localStorage
+        localStorage.setItem("comments", JSON.stringify(comments));
 
-        // Auto scroll to new comment
-        newComment.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
+        // Refresh comments
+        displayComments();
 
+        // Scroll to top (newest comment)
+        commentContainer.scrollTop = 0;
 
         form.reset();
 
