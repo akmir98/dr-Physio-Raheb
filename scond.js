@@ -101,6 +101,7 @@ function updateScroll() {
 
         // Save to localStorage
         localStorage.setItem("comments", JSON.stringify(comments));
+        localStorage.clear()
 
         // Refresh comments
         displayComments();
@@ -109,6 +110,7 @@ function updateScroll() {
         commentContainer.scrollTop = 0;
 
         form.reset();
+
 
     });
 
