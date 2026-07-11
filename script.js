@@ -875,3 +875,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+
+// ========================= screen reveal====================================
