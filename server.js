@@ -2,11 +2,9 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
-const { Resend } = require("resend");
 
 const app = express();
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+const nodemailer = require("nodemailer");
 
 const PORT = process.env.PORT || 5000;
 
@@ -14,7 +12,22 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
 
-
+const transporter = nodemailer.createTransport({
+    host: "smtp.hostinger.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
+transporter.verify((error, success) => {
+    if (error) {
+        console.log("SMTP Error:", error);
+    } else {
+        console.log("SMTP Server is ready");
+    }
+});
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
@@ -32,41 +45,40 @@ if (!name || !email || !message) {
     try {
 
         // Email to clinic
-        const clinic=await resend.emails.send({
+        const clinic = await transporter.sendMail({
 
-            from: "onboarding@resend.dev",
+    from: process.env.EMAIL_USER,
 
-            to: process.env.EMAIL_USER,
+    to: [
+        process.env.CEO_EMAIL,
+        process.env.RECEPTION_EMAIL
+    ],
 
-            subject: "New Contact Message",
+    subject: "New Contact Message",
 
-            text: `
+    text: `
 New Contact Request
 
 Name: ${name}
-
 Email: ${email}
-
 Phone: ${phone}
-
 Subject: ${subject}
 
 Message:
 
 ${message}
 `
-        });
-console.log("clinic",clinic)
-        // Auto reply
-const  patientresult=await resend.emails.send({
 
-            from: "onboarding@resend.dev",
+});// Auto reply
+const patientResult = await transporter.sendMail({
 
-            to: email,
+    from: process.env.EMAIL_USER,
 
-            subject: "Thank you for contacting Dr Physio Rehab",
+    to: email,
 
-            html: `
+    subject: "Thank you for contacting Dr Physio Rehab",
+
+    html: `
 <h2>Thank You!</h2>
 
 <p>Dear <strong>${name}</strong>,</p>
@@ -77,8 +89,8 @@ const  patientresult=await resend.emails.send({
 
 <h3>Dr Physio Rehab</h3>
 `
-        });
-console.log("petientemail",patientresult)
+
+});
         res.json({
 
             message: "Message sent successfully"
@@ -110,29 +122,30 @@ if (!name || !email || !issues) {
 }
     try {
 
-        await resend.emails.send({
+await transporter.sendMail({
 
-            from: "onboarding@resend.dev",
+    from: process.env.EMAIL_USER,
 
-            to: process.env.EMAIL_USER,
+    to: [
+        process.env.CEO_EMAIL,
+        process.env.RECEPTION_EMAIL
+    ],
 
-            subject: "New Service Request",
+    subject: "New Service Request",
 
-            text: `
+    text: `
 New Patient Request
 
 Name: ${name}
-
 Email: ${email}
-
 Phone: ${phone}
 
 Problem:
 
 ${issues}
 `
-        });
 
+});
         res.json({
 
             message: "Request sent successfully"
