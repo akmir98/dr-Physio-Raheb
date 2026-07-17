@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
             newComment.className = "comments-user";
 
             newComment.innerHTML = `
-             <h2>Comments</h2>
                 <i class="fa-solid fa-user"></i>
 
                 <div class="comment-to-user">
