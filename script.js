@@ -86,10 +86,10 @@ let autoInterval;
 let animationTimeout;
 
 let count1 = 0;
-let count2 = 0;
+let count2 = 20000;
 
 const min = 10;
-const max = 50;
+const max = 21600;
 
 let fire = false;
 
@@ -231,7 +231,7 @@ function countEx(){
         }
 
 
-    },200);
+    },50);
 
 }
 
