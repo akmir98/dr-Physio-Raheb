@@ -80,8 +80,6 @@ const second = document.getElementById("count2");
 const heading = document.querySelectorAll(".key-pain li");
 const objimg = document.querySelectorAll(".image-point");
 
-// let automaticallySlide = 7000;
-// let timerRunning = 1000;
 let autoInterval;
 let animationTimeout;
 
@@ -102,6 +100,13 @@ window.addEventListener('scroll', () => {
         window.scrollY > 100
     );
 });
+
+// ---------------- MOBILE MENU (single source of truth) ----------------
+// This toggles the nav itself, which is what the CSS
+// ".header nav.mobile-active a { display:block }" rule expects.
+// (A duplicate block used to live further down this file and toggled
+// `.header` instead of `.header nav`, which fought with this handler —
+// it has been removed.)
 document.addEventListener("DOMContentLoaded", function () {
 
     const menuBtn = document.querySelector(".fa-bars");
@@ -111,6 +116,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuBtn.addEventListener("click", function () {
             nav.classList.toggle("mobile-active");
+        });
+
+        // close menu when tapping outside of it
+        document.addEventListener("click", function (event) {
+            if (!nav.contains(event.target) && nav.classList.contains("mobile-active")) {
+                nav.classList.remove("mobile-active");
+            }
         });
 
     }
@@ -266,7 +278,7 @@ window.addEventListener("scroll",()=>{
 
 
 
-// // ---------------- KEY PAIN IMAGE CHANGE ----------------
+// ---------------- KEY PAIN IMAGE CHANGE ----------------
 
 
 heading.forEach((title)=>{
@@ -326,59 +338,56 @@ document.addEventListener('DOMContentLoaded', function () {
     let autoSlideInterval;
 
 
-    // Create dots automatically
-function createDots(){
+    function createDots(){
 
-    dotsContainer.innerHTML = "";
+        dotsContainer.innerHTML = "";
 
-    let totalDots;
-
-
-    if(window.innerWidth <= 786){
-
-        // Mobile
-        totalDots = slides.length; // 6 dots
-
-    }else{
-
-        // Tablet + Laptop
-        totalDots = 4; // 4 dots
-
-    }
+        let totalDots;
 
 
+        if(window.innerWidth <= 786){
 
-    for(let i = 0; i < totalDots; i++){
+            totalDots = slides.length;
 
+        }else{
 
-        let dot = document.createElement("span");
-
-        dot.classList.add("dot");
-
-
-        if(i === 0){
-
-            dot.classList.add("active");
+            totalDots = 4;
 
         }
 
 
-        dot.addEventListener("click",()=>{
 
-            currentIndex = i;
-
-            updateSlider();
-
-            resetAutoSlide();
-
-        });
+        for(let i = 0; i < totalDots; i++){
 
 
-        dotsContainer.appendChild(dot);
+            let dot = document.createElement("span");
+
+            dot.classList.add("dot");
+
+
+            if(i === 0){
+
+                dot.classList.add("active");
+
+            }
+
+
+            dot.addEventListener("click",()=>{
+
+                currentIndex = i;
+
+                updateSlider();
+
+                resetAutoSlide();
+
+            });
+
+
+            dotsContainer.appendChild(dot);
+
+        }
 
     }
-
-}
 
 
     function getSlideWidth(){
@@ -522,43 +531,11 @@ function createDots(){
     startAutoSlide();
 
 
-});// Add this to your existing script.js or add it at the end before closing body tag
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const menuIcon = document.querySelector('.fa-bars');
-    const header = document.querySelector('.header');
-    
-    if (menuIcon) {
-        menuIcon.addEventListener('click', function() {
-            header.classList.toggle('mobile-active');
-        });
-    }
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!header.contains(event.target) && header.classList.contains('mobile-active')) {
-            header.classList.remove('mobile-active');
-        }
-    });
-    
-    // Adjust service slider for mobile
-    function adjustServiceSlider() {
-        const serviceCard = document.querySelector('.service-card');
-        const contents = document.querySelectorAll('.sevice-content');
-        
-        if (window.innerWidth <= 1000) {
-            // On mobile, show all cards stacked
-            contents.forEach(content => {
-                content.style.display = 'block';
-            });
-        }
-    }
-    
-    // Run on load and resize
-    adjustServiceSlider();
-    window.addEventListener('resize', adjustServiceSlider);
 });
 
+// NOTE: the old duplicate "mobile menu toggle" + "adjustServiceSlider" block
+// that used to live here (targeting `.header` instead of `.header nav`) has
+// been removed — it was fighting with the single mobile-menu handler above.
 
 const track = document.querySelector(".commit-content");
 const dotsContainer = document.querySelector(".commit-dots");
@@ -570,7 +547,6 @@ let autoSlide;
 
 
 
-// Create dots depending on screen size
 function createDots(){
 
     dotsContainer.innerHTML = "";
@@ -579,11 +555,11 @@ function createDots(){
 
     if(window.innerWidth <= 786){
 
-        totalDots = slides.length; // 6 dots mobile
+        totalDots = slides.length;
 
     }else{
 
-        totalDots = Math.ceil(slides.length / 2); // 3 dots laptop
+        totalDots = Math.ceil(slides.length / 2);
 
     }
 
@@ -629,19 +605,14 @@ function goToSlide(index){
 
     if(window.innerWidth <= 786){
 
-        // mobile one card
         slideMove = index * 101;
-        console.log("mobile size")
 
-    }else if(window.innerWidth >= 786 && window,innerWidth <= 1024){
+    }else if(window.innerWidth >= 786 && window.innerWidth <= 1024){
 
-        // laptop two cards
         slideMove = index * 102;
-        console.log("teblet size")
 
     }else{
         slideMove = index * 103;
-        console.log("laptop size")
     }
 
 
@@ -723,12 +694,9 @@ const videos = [
 let autoSlideInterval = null;
 const AUTO_SLIDE_TIME = 4000;
 
-// Elements
 const mainThumb = document.getElementById("mainThumbnail");
 const popup = document.querySelector(".video-popup");
-const iframe = document.querySelector(".video-popup iframe"); // ✅ FIXED
-
-/* ---------------- AUTO SLIDE ---------------- */
+const iframe = document.querySelector(".video-popup iframe");
 
 function startAutoSlide() {
   stopAutoSlide();
@@ -742,13 +710,9 @@ function stopAutoSlide() {
   }
 }
 
-/* ---------------- UPDATE MAIN ---------------- */
-
 function updateMainVideo() {
   mainThumb.src = `https://img.youtube.com/vi/${videos[currentIndex].id}/hqdefault.jpg`;
 }
-
-/* ---------------- POPUP ---------------- */
 
 function openPopup() {
   stopAutoSlide();
@@ -761,8 +725,6 @@ function closePopup() {
   iframe.src = "";
   startAutoSlide();
 }
-
-/* ---------------- NAVIGATION ---------------- */
 
 function nextVideo() {
   currentIndex = (currentIndex + 1) % videos.length;
@@ -780,8 +742,6 @@ function prevVideo() {
   }
 }
 
-/* ---------------- EVENTS ---------------- */
-
 document.querySelector(".next-video").addEventListener("click", nextVideo);
 document.querySelector(".prev-video").addEventListener("click", prevVideo);
 document.querySelector(".next-video-popup").addEventListener("click", nextVideo);
@@ -790,7 +750,6 @@ document.querySelector(".prev-video-popup").addEventListener("click", prevVideo)
 document.getElementById("playMain").addEventListener("click", openPopup);
 document.querySelector(".close-btn").addEventListener("click", closePopup);
 
-// Grid click
 document.querySelectorAll(".video-card").forEach((card, index) => {
   card.addEventListener("click", () => {
     currentIndex = index;
@@ -799,16 +758,11 @@ document.querySelectorAll(".video-card").forEach((card, index) => {
   });
 });
 
-/* ---------------- INIT ---------------- */
-
 updateMainVideo();
 startAutoSlide();
 
 // --------------------------------------------------------
-
                     // backend form
-
-   
 // ----------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -875,7 +829,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
-
-
-// ========================= screen reveal====================================
