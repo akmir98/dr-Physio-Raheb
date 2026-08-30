@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 
 app.post("/contact-message", async (req, res) => {
 
-    const { name, email, phone, subject, message } = req.body;
+    const { name, email, phone, subject, message, date, time } = req.body;
 if (!name || !email || !message) {
     return res.status(400).json({
         message: "Please fill in all required fields."
@@ -63,6 +63,8 @@ Name: ${name}
 Email: ${email}
 Phone: ${phone}
 Subject: ${subject}
+Preferred Date: ${date || "Not specified"}
+Preferred Time: ${time || "Not specified"}
 
 Message:
 

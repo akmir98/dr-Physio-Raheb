@@ -829,3 +829,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+// ---------------- CONDITIONS DROPDOWN (navbar) ----------------
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".nav-dropdown");
+    const toggle = document.querySelector(".nav-dropdown-toggle");
+
+    if (dropdown && toggle) {
+        toggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            dropdown.classList.toggle("open");
+        });
+
+        // close when clicking anywhere outside the dropdown
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("open");
+            }
+        });
+
+        // mark the current page's link as active, if it's one of the conditions
+        const currentFile = window.location.pathname.split("/").pop();
+        document.querySelectorAll(".nav-dropdown-menu a").forEach(link => {
+            if (link.getAttribute("href") === currentFile) {
+                link.classList.add("current");
+            }
+        });
+    }
+});

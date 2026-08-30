@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preventing Back Pain Through Better Movement Habits | Dr Physio Rehab</title>
-    <link rel="stylesheet" href="DOC-20260213-WA0013.css">
+    <title>How Physiotherapy Improves Quality of Life | Dr Physio Rehab</title>
     <link rel="icon" type="image/png" href="image/logo.jpeg">
+    <link rel="stylesheet" href="styling/style.css">
+    <link rel="stylesheet" href="styling/reponsivs.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="top">
         <nav>
             <div class="logo">
                 <img src="image/logo-removebg-preview.png" class="logo-image">
@@ -22,6 +24,24 @@
             <a href="about.html">About us</a>
             <a href="blog.html">Blog</a>
             <a href="service1.html">Service</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Conditions <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="headache.html">Headaches</a>
+                    <a href="tmj.html">TMJ Syndrome</a>
+                    <a href="neck-pain.html">Neck Pain</a>
+                    <a href="shoulder-pain.html">Shoulder Pain</a>
+                    <a href="mid-back-pain.html">Mid-Back Pain</a>
+                    <a href="elbow-pain.html">Elbow Pain</a>
+                    <a href="low-back-pain.html">Low-Back Pain</a>
+                    <a href="pelvic-pain.html">Pelvic Pain</a>
+                    <a href="hips-pain.html">Hips Pain</a>
+                    <a href="wrist-pain.html">Wrist Pain</a>
+                    <a href="knee-pain.html">Knee's Pain</a>
+                    <a href="foot-ankle-pain.html">Foot & Ankle Pain</a>
+                    <a href="heel-pain.html">Heel Pain</a>
+                </div>
+            </div>
             <a href="contect.html">Contact</a>
             <a href="home-health.html">Home Health</a>
             <i class="fa-solid fa-bars" id="btn-menu"></i>
@@ -31,9 +51,9 @@
     <section class="image2" id="image2">
         <img src="image/blog9.jpeg" alt="">
         <div class="img-content2">
-            <h3>Single Blogs Page</h3>
+            <h3>How Physiotherapy Improves Quality of Life</h3>
             <div class="a-tag">
-                <a href="index.html">Home</a><span>/ Single Blog</span>
+                <a href="index.html">Home</a><span> / </span><a href="blog.html">Blog</a><span> / Quality of Life</span>
             </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -142,21 +162,21 @@
             </div>
            <div class="category2">
                 <h3>Categories</h3>
-                <a href="single5.html">Heaches</a>
-                <a href="single2.html">knees Pain</a>
-                <a href="single5.html">bad Posture</a>
+                <a href="single5.html">Headaches</a>
+                <a href="single2.html">Knee Pain</a>
+                <a href="single5.html">Bad Posture</a>
                 <a href="single1.html">Work Injuries</a>
                 <a href="single1.html">Ankle Pain</a>
-                <a href="single7.html">Spain Pain</a>
+                <a href="single7.html">Back Pain</a>
             </div>
         </div>
     </div>
     <div class="buttons">
         <a href="single8.html" class="one">
             << Perv</a>
-                <a href="single9.html" class="two"> Next >> </a>
+                <a href="blog.html" class="two"> Next >> </a>
     </div>
-    <div class="comment-user">
+    <div class="comment-user" id="commentsContainer">
         <h2>Comments</h2>
         <div class="comments-user">
             <i class="fa-solid fa-user"></i>
@@ -171,7 +191,7 @@
     </div>
     <div class="form-section">
         <h3>Leave a Reply</h3>
-        <form action="">
+        <form id="commentForm">
             <div class="form-text">
                 <input type="text" name="name" id="name" placeholder="Name" required>
                 <input type="email" name="email" id="email" placeholder="*Email" required>
@@ -205,7 +225,7 @@
                     <a href="service1.html">Dry Needle</a>
                     <a href="service1.html">Kinesiology Taping</a>
                     <a href="service1.html">Soft Tissue Release</a>
-                    <a href="service1.html">sports injurie</a>
+                    <a href="service1.html">Sports Injury</a>
                 </div>
             </div>
             <div class="quick-contenner">
@@ -215,14 +235,14 @@
                     <a href="about.html">Doctor</a>
                     <a href="service1.html">Service</a>
                     <a href="blog.html">Blog</a>
-                    <a href="contect.html">Contect</a>
+                    <a href="contect.html">Contact</a>
                 </div>
             </div>
         <div class="address">
 
     <div class="address-item">
         <i class="fa-solid fa-phone"></i>
-        <span>+923331343878</span>
+        <span>+92 333 1343878</span>
     </div>
 
     <div class="address-item">
@@ -238,12 +258,12 @@
 </div>
         </div>
         <div class="footer">
-            <h3>© Dr Physio Rehab. All rights reserved By Nasrullah</h3>
-            <a href="#image2"><i class="fa-solid fa-arrow-up"></i></a>
+            <h3>© Dr Physio Rehab. All rights reserved.</h3>
+            <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
         </div>
     </section>
-    <script src="script.js"></script>
-    <script src="scond.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/scond.js"></script>
 </body>
 
 </html>

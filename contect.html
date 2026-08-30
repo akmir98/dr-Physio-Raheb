@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us | Dr Physio Rehab</title>
  <link rel="icon" type="image/png" href="image/logo.jpeg">
-    <link rel="stylesheet" href="DOC-20260213-WA0013.css">
+    <link rel="stylesheet" href="styling/style.css">
+    <link rel="stylesheet" href="styling/reponsivs.css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -14,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header">
+        <header class="header" id="top">
         <nav>
             <div class="logo">
                 <img src="image/logo-removebg-preview.png" class="logo-image">
@@ -23,8 +25,27 @@
             <a href="about.html">About us</a>
             <a href="blog.html">Blog</a>
             <a href="service1.html">Service</a>
-            <a href="contect.html">Contect</a>
+            <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-toggle">Conditions <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="headache.html">Headaches</a>
+                    <a href="tmj.html">TMJ Syndrome</a>
+                    <a href="neck-pain.html">Neck Pain</a>
+                    <a href="shoulder-pain.html">Shoulder Pain</a>
+                    <a href="mid-back-pain.html">Mid-Back Pain</a>
+                    <a href="elbow-pain.html">Elbow Pain</a>
+                    <a href="low-back-pain.html">Low-Back Pain</a>
+                    <a href="pelvic-pain.html">Pelvic Pain</a>
+                    <a href="hips-pain.html">Hips Pain</a>
+                    <a href="wrist-pain.html">Wrist Pain</a>
+                    <a href="knee-pain.html">Knee's Pain</a>
+                    <a href="foot-ankle-pain.html">Foot & Ankle Pain</a>
+                    <a href="heel-pain.html">Heel Pain</a>
+                </div>
+            </div>
+            <a href="contect.html">Contact</a>
             <a href="home-health.html">Home Health</a>
+            <a href="contect.html" class="nav-book-btn">Book Now</a>
             <i class="fa-solid fa-bars" id="btn-menu"></i>
         </nav>
     </header>
@@ -33,7 +54,7 @@
         <div class="img-content2">
             <h3>Contact us</h3>
             <div class="a-tag">
-                <a href="index.html">Home</a><span>/Contect Us</span>
+                <a href="index.html">Home</a><span>/Contact Us</span>
             </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -84,8 +105,6 @@
                 </p>
                 <a href="https://www.facebook.com/dprhomecare"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://wa.me/+923331343878"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
             <form id="contactForm">
                 <div id="formStatus" class="form-status"></div>
@@ -96,6 +115,10 @@
                 <div class="form-content">
                     <input type="tel" name="phone" id="contectPhone" placeholder="number*" required>
                     <input type="text" name="subject" id="contectSubject" placeholder="subject*" required>
+                </div>
+                <div class="form-content date-time-row">
+                    <input type="date" name="date" id="contectDate" required>
+                    <input type="time" name="time" id="contectTime" required>
                 </div>
                 <textarea type="text" name="message" id="contectMessage" placeholder="*Massege" rows="5" cols="40" class="Message"></textarea>
                 <div class="btn-area">
@@ -108,7 +131,10 @@
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </section>
- <section class="fainal">
+
+
+
+  <section class="fainal">
         <img src="image/fanail.jpeg" loading="lazy" class="loadme">
         <div class="fainal-content">
             <div class="main-contenner">
@@ -129,7 +155,7 @@
                     <a href="service1.html">Dry Needle</a>
                     <a href="service1.html">Kinesiology Taping</a>
                     <a href="service1.html">Soft Tissue Release</a>
-                    <a href="service1.html">sports injurie</a>
+                    <a href="service1.html">Sports Injury</a>
                 </div>
             </div>
             <div class="quick-contenner">
@@ -139,7 +165,7 @@
                     <a href="about.html">Doctor</a>
                     <a href="service1.html">Service</a>
                     <a href="blog.html">Blog</a>
-                    <a href="contect.html">Contect</a>
+                    <a href="contect.html">Contact</a>
                 </div>
             </div>
         <div class="address">
@@ -162,12 +188,12 @@
 </div>
         </div>
         <div class="footer">
-            <h3>© Dr Physio Rehab. All rights reserved By Nasrullah</h3>
-            <a href="#image2"><i class="fa-solid fa-arrow-up"></i></a>
+            <h3>© Dr Physio Rehab. All rights reserved.</h3>
+            <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
         </div>
     </section>
-    <script src="script.js"></script>
-     <script src="form.js"></script>
+    <script src="script/script.js"></script>
+     <script src="script/form.js"></script>
 </body>
 
 </html>

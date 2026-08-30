@@ -1,4 +1,3 @@
-
 const contactForm = document.getElementById("contactForm");
 const statusBox = document.getElementById("formStatus");
 const submitBtn = contactForm.querySelector("button");
@@ -26,6 +25,10 @@ email: formData.get("email"),
 phone: formData.get("phone"),
 
 subject: formData.get("subject"),
+
+date: formData.get("date"),
+
+time: formData.get("time"),
 
 message: formData.get("message")
 
