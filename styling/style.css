@@ -221,65 +221,27 @@ header nav a:active::before {
     font-weight: bold;
 }
 
-.thumnail{
+.slide-number{
     position: absolute;
-    top: 90%;
+    top: 88%;
     left: 50%;
-    display: flex;
-    gap: 20px;
-}
-.thumnail .thumnail-item{
-border: 2px solid;
-width: 15px;
-height: 15px;
-margin-top: 1rem;
-position: relative;
-border-radius: 20px;
-z-index: 100;
-}
-.thumnail-item span{
-   font-size: 2.8rem;
-   position: absolute;
-   bottom: -15px;
-   left: 0.6px;
-   text-align: center;
-   background: transparent;
-       transition: 
-        transform 0.4s ease,
-        background 0.4s ease;
-
-}
-
-.thumnail-item.active{
-    background: red;
-}
-.arrow{
-    position: absolute;
-    top: 90%;
-    left:70% ;
-   display: flex;
-   gap: 10px;
-   font-family: monospace;
-     width: 300px;
-     max-width: 30%;
-     z-index: 100;
-
-}
-.arrow button{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background: var(--main);
-    font-family: monospace;
-    font-size: large;
-    border: none;
-    font-weight: bold;
+    transform: translateX(-50%);
+    z-index: 100;
     color: white;
-    transition: .5s;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,.4);
 }
-.arrow button:hover{
-    background: white;
+.slide-number #currentSlideNum{
     color: var(--main);
+    transition: color .3s ease;
+}
+.slide-number .slide-total{
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: .8;
 }
 
 .Home .list .item:nth-child(1){

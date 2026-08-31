@@ -129,8 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 // ---------------- SLIDER ----------------
-const next = document.getElementById("home-next");
-const per = document.getElementById("home-per");
+const slideNumEl = document.getElementById("currentSlideNum");
 
 
 let automiticallyslide = 7000;
@@ -173,13 +172,11 @@ function simulation(type){
  animationTimeout=setTimeout(() => {
     homepage.classList.remove("next", "per");
 }, timer);
+
+    if(slideNumEl){
+        slideNumEl.textContent = String(currentIndex + 1).padStart(2, "0");
+    }
 }
-
-next.onclick = () => simulation("next");
-
-per.onclick = () => simulation("per");
-
-
 
 function autoslide(){
 
